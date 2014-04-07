@@ -1,0 +1,14 @@
+extends ../shared/template
+
+block content
+
+  h1 Name: #{title}
+  h3 Series:
+  ul
+    each series in serieses
+      li #{series.title}
+
+  h3 Episodes:
+  ul
+    each episode in episodes
+      li #{episode.title}

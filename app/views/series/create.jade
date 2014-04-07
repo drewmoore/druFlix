@@ -1,0 +1,115 @@
+extends ../shared/template
+
+block content
+
+  .row
+    .small-6.columns
+      form#add-movie-form(action='/series/create', method='post', enctype='multipart/form-data')
+        fieldset
+          legend Add a Movie
+          .row
+            .small-12.columns
+              label Title
+              small required
+              input(name='title', type='text', required=true)
+            .small-12.columns
+              label Directors
+              small If more than one, separate with a comma (Quentin Tarantino, Robert Rodriguez)
+              input(name='directors', type='text')
+          .row
+            .small-6.columns
+              label Year of Release
+              input(name='releaseYear', type='text')
+            .small-6.columns
+              label Upload a Video
+              small required
+              input(name='videoFile', type='file', required=true)
+          .row
+            .small-12.columns
+              label Movie Poster
+              small Please provide a cover image (.jpg or whatever). &nbsp;
+              small This will help DruFlix look tight. <br>
+              a(href='http://www.google.com/imghp', target='_blank')
+                small Google image search &nbsp;
+              small will have plenty.
+              label &nbsp;
+          .row
+            .small-6.columns
+              small required
+              input(name='coverFile', type='file', required=true)
+              input(name='seasons', type='hidden', value=0)
+              input(name='type', type='hidden', value='movie')
+              input(name='season', type='hidden', value=0)
+              input(name='episodeNo', type='hidden', value=0)
+            .small-6.columns
+              button.add-movie-button.tiny.radius.expand Add the Movie
+    .small-6.columns
+      form#add-show-form(action='/series/create', method='post', enctype='multipart/form-data')
+        fieldset
+          legend Add a TV Show
+          .row
+            .small-12.columns
+              label Title
+              small required
+              input(name='title', type='text', required=true)
+            .small-12.columns
+              label Directors
+              small If more than one, separate with a comma (Trey Parker, Matt Stone)
+              input(name='directors', type='text')
+          .row
+            .small-6.columns
+              label Year of Release
+              input(name='releaseYear', type='text')
+            .small-6.columns
+              label Number of Seasons
+              small This will keep episodes organized for your convenience.
+              small required
+              input(name='seasons', type='text', required=true)
+          .row
+            .small-6.columns
+              label Upload an Episode
+              small required
+              input(name='videoFile', type='file', required=true)
+            .small-6.columns
+              label Episode Title
+              input(name='episodeTitle', type='text', value='')
+          .row
+            .small-6.columns
+              label Season #
+              small Helps keep episodes arranged in order.
+              input(name='episodeSeason', type='text', value=0)
+              label Episode #
+              input(name='episodeEpisodeNo', type='text', value=0)
+            .small-6.columns
+              input(name='episodeType', type='hidden', value='tv')
+          .row
+            .small-12.columns
+              label Series Poster
+              small Please provide a cover image (.jpg or whatever). &nbsp;
+              small This will help DruFlix look tight. <br>
+              a(href='http://www.google.com/imghp', target='_blank')
+                small Google image search &nbsp;
+              small will have plenty.
+              label &nbsp;
+          .row
+            .small-6.columns
+              small required
+              input(name='coverFile', type='file', required=true)
+
+              input(name='type', type='hidden', value='tv')
+            .small-6.columns
+              button.add-movie-button.tiny.radius.expand Add the Show
+
+  .row
+    .small-2.columns
+      &nbsp;
+    .small-8.columns
+      if err
+        span.jesse-span
+          img(src='/img/jesse.jpg')
+        span.error-text
+          h5 Jesse Says:
+          p &quot;#{err}&quot;
+    .small-2.columns
+      &nbsp;
+

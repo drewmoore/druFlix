@@ -1,0 +1,60 @@
+extends ../shared/template
+
+block content
+
+  .row
+    .small-6.columns
+      .row
+        .series-cover-home(style='background-image: url("' + cover + '");')
+      .row
+        .small-6.columns
+          if type == 'tv'
+            -var id = _id.toString();
+            a.button.tiny.radius.expand(href='/episodes/create/' + id) Add an Episode
+        .small-6.columns
+    .small-6.columns
+      .row
+        h1 #{title} (#{releaseYear})
+      .row
+        .small-12.columns
+          p Directed By: #{directors}
+      .row
+        .small-6.columns
+          p Added By: #{userName}
+        .small-6.columns
+          if type == 'tv'
+            p Seasons:#{seasons}
+
+      if type == 'movie'
+        .row
+          .small-12.columns
+            - var id = movie.toString();
+            p Watch It!
+              a(href='/episodes/watch/' + id)
+                img(src='/img/play.png')
+
+      .row
+        if type == 'tv'
+          table
+            thead
+              th Season
+              th Episode
+              th Title
+              th Watch
+            tbody
+              each episode in episodes
+                -var id = episode._id.toString();
+                tr
+                  td
+                    p #{episode.season}
+                  td
+                    p #{episode.episodeNo}
+                  td
+                    p #{episode.title}
+                  td
+                    a(href='/episodes/watch/' + id)
+                      img(src='/img/play.png')
+
+
+
+
