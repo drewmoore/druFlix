@@ -2,12 +2,16 @@ extends ../shared/template
 
 block content
 
-  h1 #{title}
-  each series in serieses
-    - var id = series._id.toString();
-    .series-container
-      a(href='/series/show/' + id)
-        img.series-cover(src=series.cover)
-      p.series-info #{series.title}
+  .row
+    .small-12.columns
+      h1 #{title}
+  .row
+    .small-12.columns
+      each series in serieses
+        - var id = series._id.toString();
+        .series-container
+          a(href='/series/show/' + id)
+            img.series-cover(src=series.cover)
+          p.series-info #{series.title}
 
 

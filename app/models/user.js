@@ -2,7 +2,7 @@
 
 var bcrypt = require('bcrypt');
 var users = global.nss.db.collection('users');
-//var email = require('../lib/send-email');
+var email = require('../lib/send-email');
 var Mongo = require('mongodb');
 var User;
 
@@ -28,12 +28,9 @@ User.prototype.register = function(fn){
         User.dupeCheckName(self.name, function(dupeResult){
           if(dupeResult.response){
             insert(self, function(err, inserted){
-              fn(err, inserted);
-              //
-              // COMMENTED OUT TILL THE INTERNET WORKS
-              //email.sendWelcome({to:self.email, name:self.name}, function(err, body){
-                //fn(err, body);
-              //});
+              email.sendWelcome({to:self.email, name:self.name}, function(err, body){
+                fn(err, body);
+              });
             });
           } else {
             fn('There\'s already a user with that name, yo!');
