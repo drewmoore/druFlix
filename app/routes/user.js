@@ -3,6 +3,7 @@
 var User = require('../models/user');
 var Series = require('../models/series');
 var Episode = require('../models/episode');
+var self = this;
 
 exports.auth = function(req, res){
   res.render('users/auth', {title: 'Registration/Login'});
@@ -12,7 +13,7 @@ exports.register = function(req, res){
   var user = new User(req.body);
   user.register(function(err, inserted){
     if(inserted){
-      res.redirect('/series/index');
+      self.login(req, res);
     } else {
       res.render('users/auth', {title:'Registration/Login', err: err});
     }
