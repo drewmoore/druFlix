@@ -1,11 +1,106 @@
-@bg-color: #99aa33;
+@bg-color: rgba(1, 1, 1, .9);
+@font-color: rgba(250, 250, 250, .8);
+@font-sub-head: rgba(255, 255, 100, .8);
+@shadow-color: rgba(150, 150, 150, .7);
+
+
+@font-face {
+  font-family: "Lobster";
+  src: url("/css/lobster.ttf");
+}
+
+@font-face {
+  font-family: "Francois";
+  src: url("/css/francoisone.ttf");
+}
+
+@font-face{
+  font-family: "Vollkorn-Bold";
+  src: url("/css/Volkorn-Bold.ttf");
+}
+
+@font-face{
+  font-family: "Vollkorn";
+  src: url("/css/Volkorn-Regular.ttf");
+}
 
 body{
   background-color: @bg-color;
+  color: @font-color;
 }
 
 h1 {
+  font-family: "Lobster";
   text-align: center;
+  color: @font-color;
+}
+
+h5 {
+  font-family: "Lobster";
+  text-align: center;
+  color: @font-color;
+  font-size: 20px;
+}
+
+.text{
+  font-size: 18px;
+  font-family: "Francois";
+  color: @font-sub-head;
+}
+
+
+fieldset{
+  border-color: @font-sub-head;
+}
+
+form > fieldset > legend{
+  background-color: rgba(0, 0, 0, .0);
+  font-family: "Lobster";
+  color: @font-sub-head;
+  font-size: 26px;
+}
+
+label{
+  font-family: "Francois";
+  color: @font-sub-head;
+  font-size: 16px;
+}
+
+input[type="text"], input[type="password"], input[type="text"]:focus, input[type="password"]:focus{
+  background-color: rgba(0,0,0,.0);
+  font-family: "Vollkorn";
+  font-size: 14px;
+  color: @font-color;
+  margin: 4px 0px 8px 0px;
+}
+
+button{
+  background-color: rgba(150, 10, 150, .6);
+  margin: 4px 0px;
+  font-family: "Lobster";
+  color: @font-sub-head;
+  font-size: 18px;
+}
+
+.left-button{
+  border-radius: 40px 8px;
+  float: left;
+}
+
+.right-button{
+  border-radius: 8px 40px;
+  float: right;
+}
+
+button:hover{
+  background-color: rgba(200, 0, 75, .8);
+}
+
+small{
+  font-family: "Vollkorn-Bold";
+  font-size: 12px;
+  margin: 2px;
+  font-weight: 700;
 }
 
 #register{
@@ -23,14 +118,14 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   margin: 6px 6px;
-  box-shadow: 0px 0px 3px 2px #000000;
+  box-shadow: 0px 0px 3px 2px @shadow-color;
   display: inline-block;
 }
 
 .series-container{
   width: 214px;
-  height: 370px;
-  margin: 6px 6px 6px 6px;
+  height: 375px;
+  margin: 8px 8px 8px 8px;
   display: inline-block;
   vertical-align: top;
 }
@@ -38,7 +133,11 @@ h1 {
 .series-cover{
   width: 100%;
   height: 315px;
-  box-shadow: 0px 0px 3px 2px #000000;
+  box-shadow: 0px 0px 3px 2px @shadow-color;
+}
+
+.series-cover:hover{
+  box-shadow: 0px 0px 12px 8px @shadow-color;
 }
 
 .series-info{
@@ -46,6 +145,7 @@ h1 {
   min-height: 10%;
   text-align: center;
   font-weight: 800;
+  margin: 8px 0px;
 }
 
 .jesse-span{
@@ -55,7 +155,7 @@ h1 {
 }
 
 .jesse-span > img {
-  box-shadow: 0px 0px 2px 1px black;
+  box-shadow: 0px 0px 2px 1px @shadow-color;
   max-width: 100%;
   max-height: 100%;
 }

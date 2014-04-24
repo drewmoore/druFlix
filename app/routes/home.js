@@ -10,9 +10,9 @@ exports.index = function(req, res){
       _.each(records, function(series){
         covers.push(series.cover);
       });
-      res.render('home/index', {title: 'DruFlix', covers:covers});
+      res.render('home/index', {title: 'druFlix', covers:covers});
     } else {
-      res.render('home/index', {title: 'DruFlix', covers:covers});
+      res.render('home/index', {title: 'druFlix', covers:covers});
     }
   });
 };
