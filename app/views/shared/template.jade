@@ -22,9 +22,8 @@ html(class='no-js', lang='en')
         ul.right
           li: a(href="/series/create") New Movie/Show
           li.divider
-          li.has-form
-            form(action='/logout', method='post')
-              button.radius.expand.logout-button Logout
+          li: a(onclick="$('#logout-form').submit(); return false;") Logout
+            form#logout-form.hide(action='/logout', method='post')
 
     .row
       .small-12.columns

@@ -74,6 +74,10 @@ input[type="text"], input[type="password"], input[type="text"]:focus, input[type
   margin: 4px 0px 8px 0px;
 }
 
+input[type="text"]:focus, input[type="password"]:focus{
+  box-shadow: 0px 0px 3px 2px @shadow-color;
+}
+
 button{
   background-color: rgba(150, 10, 150, .6);
   margin: 4px 0px;
@@ -144,8 +148,14 @@ small{
   width: 100%;
   min-height: 10%;
   text-align: center;
-  font-weight: 800;
+  font-weight: 500;
   margin: 8px 0px;
+  font-family: "Francois";
+  color: @font-sub-head;
+}
+
+.series-index-head{
+  color: @font-sub-head;
 }
 
 .jesse-span{
@@ -165,12 +175,13 @@ small{
   color: red;
 }
 
-.logout-button{
-  background-color: rgba(0, 0, 0, .0);
-  font-size: 12px;
+nav > ul > li:hover {
+  background-color: rgba(0,0,0,1);
 }
 
-.logout-button:hover{
-  background-color: rgba(0, 0, 0, .0);
+.top-bar-section > ul > li > a{
+  font-family: "Lobster";
+  font-size: 16px;
 }
+
 
