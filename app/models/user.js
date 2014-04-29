@@ -99,7 +99,7 @@ User.findByEmailAndPassword = function(email, password, fn){
         }
       });
     } else {
-      fn('That username(email) is wack, yo!');
+      fn('That email is wack, yo!');
     }
   });
 };

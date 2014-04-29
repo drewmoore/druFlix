@@ -44,7 +44,7 @@ Series.prototype.insert = function(fn){
         fn(err, records);
       });
     } else {
-      fn('That show/movie already exists, yo! Try again...');
+      fn('That one\'s already in there, yo! Try again...');
     }
   });
 };

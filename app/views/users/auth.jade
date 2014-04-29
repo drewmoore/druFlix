@@ -12,6 +12,21 @@ html(class='no-js', lang='en')
   body
 
     .row
+      .small-2.columns
+        &nbsp;
+      .small-8.columns
+        if err
+          .row
+            .small-12.columns.error
+              span.jesse-span
+                img(src='/img/jesse.jpg')
+              span.error-text
+                h5 Jesse Says:
+                p &quot;#{err}&quot;
+      .small-2.columns
+        &nbsp;
+
+    .row
       .small-6.columns
         form(action='/login', method='post')
           fieldset
@@ -49,21 +64,6 @@ html(class='no-js', lang='en')
             .row
               .small-12.columns
                 button.right-button Join DruFlix
-
-    .row
-      .small-2.columns
-        &nbsp;
-      .small-8.columns
-        if err
-          span.jesse-span
-            img(src='/img/jesse.jpg')
-          span.error-text
-            h5 Jesse Says:
-            p &quot;#{err}&quot;
-      .small-2.columns
-        &nbsp;
-
-
 
 
     script(src='/js/vendor/jquery.js')

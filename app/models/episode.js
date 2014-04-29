@@ -33,7 +33,7 @@ Episode.prototype.insert = function(fn){
         fn(err, records);
       });
     } else {
-      fn('That episode/movie is already in here, yo!');
+      fn('That one\'s already in here, yo!');
     }
   });
 };

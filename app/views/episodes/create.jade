@@ -3,28 +3,41 @@ extends ../shared/template
 block content
 
   .row
-    .small-6.columns
+    .small-2.columns
+      &nbsp;
+    .small-8.columns
+      if err
+        .row
+          .small-12.columns.error
+            span.jesse-span
+              img(src='/img/jesse.jpg')
+            span.error-text
+              h5 Jesse Says:
+              p &quot;#{err}&quot;
+    .small-2.columns
+
+  .row
+    .small-4.columns
       .row
         .series-cover-home(style='background-image: url("' + series.cover + '");')
-    .small-6.columns
-      .row
-        h1 #{series.title} (#{series.releaseYear})
+    .small-8.columns
       .row
         .small-12.columns
-          form#add-show-form(action='/episodes/create', method='post', enctype='multipart/form-data')
+          h1 #{series.title} (#{series.releaseYear})
+          form(action='/episodes/create', method='post', enctype='multipart/form-data')
             fieldset
               legend Add an Episode
               .row
                 .small-6.columns
                   label Upload an Episode
-                  small required
+                  small (required)
                   input(name='videoFile', type='file', required=true)
                 .small-6.columns
                   label Episode Title
                   input(name='episodeTitle', type='text', value='')
               .row
                 .small-6.columns
-                  label Season #
+                  label Season # <br>
                   small Helps keep episodes arranged in order.
                   input(name='episodeSeason', type='text', value=0)
                   label Episode #
@@ -35,18 +48,8 @@ block content
                   input(name='episodeSeriesId', type='hidden', value=episodeSeriesId)
                   input(name='episodeSeriesTitle', type='hidden', value=series.title)
 
-                  button.add-movie-button.tiny.radius.expand Add the Episode
+                  <br><br><br><br><br><br>
+
+                  button.right-button Add the Episode
 
 
-  .row
-    .small-2.columns
-      &nbsp;
-    .small-8.columns
-      if err
-        span.jesse-span
-          img(src='/img/jesse.jpg')
-        span.error-text
-          h5 Jesse Says:
-          p &quot;#{err}&quot;
-    .small-2.columns
-      &nbsp;
