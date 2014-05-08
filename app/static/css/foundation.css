@@ -4448,12 +4448,12 @@ ul.off-canvas-list {
     max-width: 800px; }
 
 table {
-  background: white;
+  //background: white;
   margin-bottom: 1.25rem;
-  border: solid 1px #dddddd; }
+  //border: solid 1px #dddddd; }
   table thead,
   table tfoot {
-    background: whitesmoke; }
+    //background: whitesmoke; }
     table thead tr th,
     table thead tr td,
     table tfoot tr th,
@@ -4461,15 +4461,15 @@ table {
       padding: 0.5rem 0.625rem 0.625rem;
       font-size: 0.875rem;
       font-weight: bold;
-      color: #222222;
+      //color: #222222;
       text-align: left; }
   table tr th,
   table tr td {
     padding: 0.5625rem 0.625rem;
     font-size: 0.875rem;
-    color: #222222; }
-  table tr.even, table tr.alt, table tr:nth-of-type(even) {
-    background: #f9f9f9; }
+    //color: #222222; }
+  //table tr.even, table tr.alt, table tr:nth-of-type(even) {
+    //background: #f9f9f9; }
   table thead tr th,
   table tfoot tr th,
   table tbody tr td,

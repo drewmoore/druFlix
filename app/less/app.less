@@ -1,9 +1,10 @@
-@bg-color: rgba(1, 1, 1, .9);
+@bg-color: rgba(2, 1, 1, .9);
 @font-color: rgba(250, 250, 250, .8);
 @font-sub-head: rgba(255, 255, 100, .8);
 @shadow-color: rgba(150, 150, 150, .7);
 @nav-height: 50px;
 @green-text: rgba(75, 250, 75, 1);
+@button-color: rgba(150, 10, 150, .6);
 
 
 @font-face {
@@ -100,11 +101,39 @@ input[type="file"] {
 }
 
 button{
-  background-color: rgba(150, 10, 150, .6);
+  background-color: @button-color;
   margin: 4px 0px;
   font-family: "Lobster";
   color: @font-sub-head;
   font-size: 18px;
+}
+
+table {
+  margin: 0px auto;
+  width: 100%;
+  background-color: @button-color;
+  box-shadow: 0px 0px 12px 4px @shadow-color;
+}
+
+th {
+  color: @font-sub-head;
+  background-color: @bg-color;
+}
+
+tr {
+  background-color: rgba(10, 10, 10, .7);
+}
+
+table tr:hover {
+  background-color: rgba(60, 60, 60, .7);
+
+}
+
+td {
+}
+
+td > p{
+  color: @font-sub-head;
 }
 
 .left-button{
@@ -112,12 +141,30 @@ button{
   float: left;
 }
 
+.add-episode-button {
+  box-shadow: 0px 0px 12px 4px @shadow-color;
+  width: 200px;
+
+}
+
 .right-button{
   border-radius: 8px 40px;
   float: right;
 }
 
+a.button {
+  background-color: rgba(150, 10, 150, .6);
+  margin: 4px 0px;
+  font-family: "Lobster";
+  color: @font-sub-head;
+  font-size: 18px;
+}
+
 button:hover{
+  background-color: rgba(200, 0, 75, .8);
+}
+
+a.button:hover{
   background-color: rgba(200, 0, 75, .8);
 }
 
@@ -142,7 +189,7 @@ small{
   background-size: 214px 317px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 6px 6px;
+  margin: 6px 6px 20px 6px;
   box-shadow: 0px 0px 3px 2px @shadow-color;
   display: inline-block;
 }
@@ -183,6 +230,26 @@ small{
   text-align: center;
 }
 
+.series-show-container {
+  margin: 40px auto;
+  width: 1000px;
+  display: inline-block;
+}
+
+.series-left-panel {
+  margin: 0px auto 0px 0px;
+  float: left;
+  height: 100%;
+}
+
+.series-right-panel {
+  font-family: "Francois";
+  color: @font-color;
+  font-size: 16px;
+  margin: 0px 0px 0px auto;
+  float: right;
+  min-height: 100%;
+}
 .error {
   margin: 20px 0px 5px 0px;
   width: 100%;
@@ -228,4 +295,9 @@ nav > ul > li:hover {
   font-size: 16px;
 }
 
+#main-video {
+  margin: 80px auto;
+  //width: 480px;
+  //height: 270px;
+}
 

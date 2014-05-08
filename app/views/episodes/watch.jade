@@ -14,9 +14,11 @@ html(class='no-js', lang='en')
 
   body
 
-    -var fileType = episode.fileType.split('.')[1];
-    -var contentType = 'video/' + fileType;
-    video#main-video.video-js.vjs-default-skin(controls, preload="auto", width="640", height="264", src=episode.filePath, type=contentType)
+    .row
+      .small-12.columns.video-container
+        -var fileType = episode.fileType.split('.')[1];
+        -var contentType = 'video/' + fileType;
+        video#main-video.video-js.vjs-default-skin(controls, preload="auto", width="960px", height="540px", src=episode.filePath, type=contentType)
 
     //video(src=episode.filePath, autoplay=false, type=contentType, controls, preload='auto')
 

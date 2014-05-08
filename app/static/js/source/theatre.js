@@ -10,8 +10,6 @@
     videojs('#main-video').ready(function(){
       var myPlayer = this;
       myPlayer.play();
-      myPlayer.requestFullScreen();
-      myPlayer.trigger('fullscreenchange');
     });
   }
 
