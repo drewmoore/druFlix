@@ -11,23 +11,24 @@ html(class='no-js', lang='en')
     script(src='/js/vendor/modernizr.js')
   body
 
-    .row
-      .small-12.columns
-         h1= title
-         h5.text Share Your Movie Collection with Your Friends
-    .row
-      .small-12.columns
-        h5 Featuring:
+    a.link-all(href="/auth" title="Get into DruFlix")
+      .row
+        .small-12.columns
+           h1= title
+           h5.text Share Your Movie Collection with Your Friends
+      .row
+        .small-12.columns
+          h5 Featuring:
 
-    .row
-      .small-12.columns
-        if covers
-          each cover in covers
-            .series-cover-home(style='background-image:url("'+ cover +'");')
+      .row
+        .small-12.columns
+          if covers
+            each cover in covers
+              .series-cover-home(style='background-image:url("'+ cover +'");')
 
 
     script(src='/js/vendor/jquery.js')
     script(src='/js/vendor/foundation.min.js')
     script(src='/js/vendor/lodash.js')
     script(src='/js/vendor/moment.js')
-    script(src='/js/source/front.js')
+    //script(src='/js/source/front.js')
